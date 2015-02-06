@@ -47,10 +47,3 @@ h1, h2, h3, h4, h5 {
 .label {
   margin-left: 4px;
 }
-
-div.centre {
-  width: 100%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
