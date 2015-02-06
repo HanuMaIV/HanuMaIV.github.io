@@ -32,6 +32,11 @@ h1, h2, h3, h4, h5 {
   display: inline;
 }
 
+.page-header img:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=40);
+}
+
 .page-header h1 {
   display: inline;
   vertical-align: middle;
