@@ -19,6 +19,10 @@ table {
   background-color: #ecf0f1;
 }
 
+tr {
+  border-bottom: 1px solid #7f8c8d;
+}
+
 #blogHeading {
   border-bottom: 1px solid #7f8c8d;
 }
