@@ -13,18 +13,63 @@
   <body>
     <div class="container">
       <h1>Phase 0 Blog Entries</h1>
-      <table style="width:100%">
-        <th>
-          <td>Week</td>
-          <td>Technical Blog</td>
-          <td>Cultural Blog</td>
+      <div>
+    <label><input id="hover" type="checkbox" checked=""> hover</label>
+    <label><input id="striped" type="checkbox"> striped</label>
+    <label><input id="condensed" type="checkbox"> condensed</label>
+</div>
+<table id="table-style" data-row-style="rowStyle">
+    <thead>
+    <tr>
+        <th data-field="id" class="col-md-2">Week</th>
+        <th data-field="name" class="col-md-6">
+            <i class="glyphicon glyphicon-star"></i>
+            Technical Blog
         </th>
-        <tr>
-          <td>1</td>
-          <td><a href="http://hanumaiv.github.io/blog/t1-git-blog.html">Version Control</a></td>
-          <td><a href="http://hanumaiv.github.io/blog/c1-chefs-kitchen.html">Fireside Chat Reflections</a></td>
-        </tr>
-      </table>
+        <th data-field="price" class="col-md-4">
+            <i class="glyphicon glyphicon-heart"></i>
+            Social Blog
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Week 1</td>
+        <td><a href="http://hanumaiv.github.io/blog/t1-git-blog.html">Version Control</a></td>
+        <td><a href="http://hanumaiv.github.io/blog/c1-chefs-kitchen.html">Fireside Chat Reflections</a></td>
+      </tr>
+    </tbody>
+</table>
+<script>
+    $(function () {
+        $('#hover, #striped, #condensed').click(function () {
+            var classes = 'table';
+
+            if ($('#hover').prop('checked')) {
+                classes += ' table-hover';
+            }
+            if ($('#condensed').prop('checked')) {
+                classes += ' table-condensed';
+            }
+            $('#table-style').bootstrapTable('destroy')
+                .bootstrapTable({
+                    classes: classes,
+                    striped: $('#striped').prop('checked')
+                });
+        });
+    });
+
+    function rowStyle(row, index) {
+        var classes = ['active', 'success', 'info', 'warning', 'danger'];
+
+        if (index % 2 === 0 && index / 2 < classes.length) {
+            return {
+                classes: classes[index / 2]
+            };
+        }
+        return {};
+    }
+</script>
     </div>
   </body>
 </html>
