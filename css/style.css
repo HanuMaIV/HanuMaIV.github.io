@@ -1,0 +1,37 @@
+    body {
+      background-color: #ecf0f1;
+    }
+
+    footer {
+      border-top: 1px solid #7f8c8d;
+      margin-top: 20px;
+    }
+
+    #indexTable {
+      border-bottom: 1px solid #7f8c8d;
+    }
+    .page-header {
+      margin: 45 px;
+    }
+
+    .page-header img {
+      width: 146px;
+      border-radius: 75px;
+      border: 2px #ccc solid;
+      display: inline;
+    }
+
+    .page-header h1 {
+      display: inline;
+      vertical-align: bottom;
+    }
+
+    .table {
+      display:table;
+      width:100%;
+      table-layout:fixed;
+    }
+
+    .label{
+      margin-left: 4px;
+    }
