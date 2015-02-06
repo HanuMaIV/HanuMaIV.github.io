@@ -29,6 +29,10 @@ tr.last-child {
    border-bottom: none;
 }
 
+tbody {
+  border-bottom: 0;
+}
+
 #blogHeading {
   border-bottom: 1px solid #7f8c8d;
 }
