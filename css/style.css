@@ -69,7 +69,6 @@ tr.last-child {
   display:table;
   width:100%;
   table-layout:fixed;
-  border-bottom: none;
 }
 
 .label {
