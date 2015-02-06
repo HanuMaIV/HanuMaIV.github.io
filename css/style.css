@@ -63,6 +63,7 @@ tr {
   display:table;
   width:100%;
   table-layout:fixed;
+  border-bottom-color: red;
 }
 
 .label {
