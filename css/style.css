@@ -70,7 +70,7 @@ tr.last-child {
   display:table;
   width:100%;
   table-layout:fixed;
-  border-bottom: 0;
+  border-bottom: none;
 }
 
 .label {
