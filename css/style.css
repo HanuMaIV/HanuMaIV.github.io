@@ -23,6 +23,11 @@ tr {
   border-bottom: 1px solid #7f8c8d;
 }
 
+
+tr.last {
+   border-bottom: none;
+}
+
 #blogHeading {
   border-bottom: 1px solid #7f8c8d;
 }
