@@ -23,6 +23,10 @@ tr {
   border-bottom: 0px solid #7f8c8d;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 #blogHeading {
   border-bottom: 1px solid #7f8c8d;
 }
