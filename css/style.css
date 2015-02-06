@@ -44,6 +44,7 @@ table {
 }
 
 .page-header h1 {
+  font-size: 1.5em;
   display: inline;
   vertical-align: middle;
   padding-left: 20px;
