@@ -182,8 +182,7 @@ section {
   border-bottom: 1px solid #ffd6c0;
   margin: 0 auto;
   width: 90%;
-  padding-top: 25px;
-  padding-bottom: 50px;
+  padding: 25px 15px 40px 15px;
 }
 
 section h1 {
@@ -248,6 +247,7 @@ section a:hover {
 
 .signature {
   text-align: right;
+  padding-bottom: 40px;
 }
 
 .cursive {
