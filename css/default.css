@@ -81,16 +81,6 @@ p {
   transform: scale(1.04) ;
 }
 
-#siteName {
-  font-size: 1.6em;
-  line-height: 1.5;
-}
-
-#tagLine {
-  font-size: 1.2em;
-  line-height: 1.5;
-}
-
 body a {
     color: #ffd6c0;
     text-decoration: none;
@@ -331,4 +321,24 @@ td {
 #footer-copyright:hover:before {
   content: "Back to top of page";
   font-family: DIGITALDREAMFAT;
+}
+
+#logo:before {
+  font-size: 2em;
+  line-height: 1.4em;
+  content: "Brendan Miranda"
+}
+
+#logo:hover:before {
+  content: "Home";
+}
+
+#logo:after {
+  font-size: 1em;
+  content: "DevBootcamp Student";
+}
+
+#logo:after {
+  font-size: 1em;
+  content: "";
 }
