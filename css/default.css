@@ -214,7 +214,7 @@ section p {
 }
 
 section a {
-  color: #442211 !important;
+  color: #442211;
   -webkit-transition: 0.4s ease-in-out;
   -moz-transition: 0.4s ease-in-out;
   -o-transition: 0.4s ease-in-out;
@@ -326,7 +326,10 @@ footer {
   }
 
   .blogEntry h3 {
-    font-size: 2.5em;
+    font-family: DIGITALDREAMFAT;
+    font-size: 2em;
+    letter-spacing: 0.2em;
+    line-height: 1.3em;
   }
 
   .blogEntry p {
@@ -347,4 +350,8 @@ footer {
     margin-left: 5px;
     padding-left: 10px;
     list-style-type: circle;
+  }
+
+  .textCenter {
+    text-align: center;
   }
