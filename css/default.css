@@ -323,3 +323,12 @@ td {
 .textCenter {
     text-align: center;
 }
+
+#footer-copyright:before {
+  content: "\00A9  Brendan Miranda 2015";
+}
+
+#footer-copyright:hover:before {
+  content: "Back to top of page";
+  font-family: DIGITALDREAMFAT;
+}
