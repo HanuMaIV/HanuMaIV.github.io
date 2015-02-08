@@ -266,6 +266,7 @@ section .fa {
 }
 
 #homePhoto {
+  width: 150px;
   float: left;
   border-radius: 75px;
   border: 1px #ffd6c0 solid;
