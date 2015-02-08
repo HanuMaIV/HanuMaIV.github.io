@@ -239,7 +239,7 @@ section p {
 }
 
 section a {
-  color: #442211;
+  color: #eee;
   -webkit-transition: 0.4s ease-in-out;
   -moz-transition: 0.4s ease-in-out;
   -o-transition: 0.4s ease-in-out;
@@ -282,6 +282,8 @@ section .fa {
 .signature {
   text-align: right;
   padding-bottom: 30px;
+  color: #442211;
+  font-size: 1.8em;
 }
 
 .cursive {
@@ -291,14 +293,13 @@ section .fa {
 /* Footer Styles */
 footer {
   clear: both;
+  margin-bottom: 10px;
 }
 
 #footer-copyright {
   font-family: DIGITALDREAMFAT;
   top: 50%;
   width: 90%;
-  padding-top: 20px;
-  padding-bottom: 20px;
   margin-top: 20px;
   display: inline-block;
   -webkit-transition: all 0.2s ease-in-out;
@@ -308,8 +309,9 @@ footer {
   border: 1px solid #ffd6c0;
   border-left: 1px solid #443311;
   border-radius: 15px;
-  margin-bottom: 30px;
   line-height: 1.7;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 #footer-copyright:hover {
