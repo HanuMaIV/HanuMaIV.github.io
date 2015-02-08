@@ -23,7 +23,7 @@ br {
 }
 
 header {
-  margin-top: 35px;
+  margin-top: 10px;
 }
 h1, h2, h3, h4, h5, h6, p {
   margin: 12px 0;
@@ -247,7 +247,7 @@ section a:hover {
 
 .signature {
   text-align: right;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 
 .cursive {
