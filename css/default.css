@@ -278,6 +278,7 @@ footer {
   border-left: 1px solid #443311;
   border-radius: 15px;
   margin-bottom: 30px;
+  line-height: 1.7;
 }
 
 #footer-copyright:hover {
