@@ -192,7 +192,7 @@ section {
 
 section h1 {
   font-family: DIGITALDREAMFAT;
-  font-size: 2em;
+  font-size: 1.2em;
   margin-bottom: 30px;
   letter-spacing: 0.15em;
   line-height: 1.4;
@@ -327,13 +327,12 @@ footer {
 
   .blogEntry h3 {
     font-family: DIGITALDREAMFAT;
-    font-size: 2em;
+    font-size: 1.2em;
     letter-spacing: 0.2em;
     line-height: 1.3em;
   }
 
   .blogEntry p {
-    margin: 20px 0 20px 0;
     font-size: 1.1em;
   }
 
