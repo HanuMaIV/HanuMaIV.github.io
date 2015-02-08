@@ -68,6 +68,7 @@ table {
 th {
     padding: 10px;
     border-bottom: 1px solid #442211;
+    color: #442211;
   }
 
 td {
@@ -342,7 +343,7 @@ footer {
 
   /* Border for Blog Table */
 .bordered {
-  border: 1px solid #ffd6c0;
+  border: 1px solid #442211;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
   border-radius: 15px;
