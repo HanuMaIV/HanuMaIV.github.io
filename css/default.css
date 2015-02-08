@@ -130,7 +130,7 @@ body#blogPost  {
 
 #logo:hover {
   color: #442211;
-  border-color: #442211;
+  border: 0;
   background-color: #ffd6c0;
   -webkit-transform: scale(1.04) ;
   -moz-transform: scale(1.04) ;
@@ -323,7 +323,7 @@ footer {
 
 #footer-copyright:hover {
   color: #442211;
-  border-color: #442211;
+  border: 0;
   background-color: #ffd6c0;
   -webkit-transform: scale(1.04) ;
   -moz-transform: scale(1.04) ;
