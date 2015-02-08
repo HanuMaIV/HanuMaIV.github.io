@@ -102,7 +102,7 @@ body#home  {
 }
 
 body#about  {
-  background-color: #d3946a;
+  background-color: #a3ccb5;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -112,12 +112,12 @@ body#blog  {
 }
 
 body#work  {
-  background-color: #34495e;
+  background-color: #4b555e;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body#contact  {
-  background-color: #e7897f;
+  background-color: #d3946a;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
