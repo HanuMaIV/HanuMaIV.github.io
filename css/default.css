@@ -121,6 +121,11 @@ body#contact  {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+body#blogPost  {
+  background-color: #3498db;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
 body#logo a:hover {
   color: #442211;
 }
