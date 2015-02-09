@@ -215,6 +215,7 @@ section {
   margin: 0 auto;
   width: 90%;
   padding: 25px 15px 25px 15px;
+  -webkit-animation: fadein 1.5s;
 }
 
 section h1 {
@@ -276,6 +277,11 @@ section .fa {
   -moz-transition: .2s ease-in-out;
   -o-transition: .2s ease-in-out;
   transition: .2s ease-in-out;
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
 }
 
 #homePhoto:hover {
