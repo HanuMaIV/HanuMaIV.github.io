@@ -277,7 +277,8 @@ footer {
 }
 
 #footer-copyright {
-  font-family: DIGITALDREAMFAT;
+  font-family: Anson;
+  font-size: 1.3em;
   top: 50%;
   width: 90%;
   margin-top: 20px;
@@ -290,7 +291,7 @@ footer {
   border-left: 1px solid #443311;
   border-radius: 15px;
   line-height: 1.7;
-  padding-top: 40px;
+  padding-top: 30px;
   padding-bottom: 20px;
 }
 
@@ -311,7 +312,8 @@ footer {
 
 #footer-copyright:hover:before {
   content: "Back to top of page";
-  font-family: DIGITALDREAMFAT;
+  font-family: Anson;
+  font-size: 1em;
 }
 
 /* Misc Classes */
