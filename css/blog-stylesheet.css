@@ -3,27 +3,28 @@
 }
 
 .blogEntry h3 {
-  font-family: DIGITALDREAMFAT;
-  font-size: 1.2em;
+  font-family: Anson;
+  font-size: 2em;
   letter-spacing: 0.2em;
   line-height: 1.3em;
 }
 
 .blogEntry p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.1em;
 }
 
 .blogEntry ul {
-  margin-left: 5px;
+  margin-left: 15%;
   padding-left: 10px;
   letter-spacing: 0.15em;
   font-size: 1em;
   text-align: left;
   line-height: 1.7;
+  list-style-type: disc;
 }
 
 .blogEntry li {
   margin-left: 5px;
   padding-left: 10px;
-  list-style-type: circle;
 }
