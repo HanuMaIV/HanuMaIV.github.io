@@ -55,6 +55,8 @@ h4 {
 
 p {
   font-family: 'Open Sans', sans-serif;
+  text-indent: 50px;
+  margin-bottom: 25px;
 }
 
 table {
@@ -82,12 +84,12 @@ body a {
 
 /* Colors for Body Depending on Page */
 body#home  {
-  background-color: #bb8866;
+  background-color: #95a5a6;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body#about  {
-  background-color: #a3ccb5;
+  background-color: #95a5a6;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -97,12 +99,12 @@ body#blog  {
 }
 
 body#work  {
-  background-color: #4b555e;
+  background-color: #95a5a6;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 body#contact  {
-  background-color: #d3946a;
+  background-color: #95a5a6;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
@@ -259,6 +261,48 @@ section .fa {
   transform: rotateY(30deg);
 }
 
+#leftPhoto {
+  width: 150px;
+  float: left;
+  border-radius: 75px;
+  border: 1px #ffd6c0 solid;
+  display: inline;
+  margin-right: 45px;
+  -webkit-transition: .2s ease-in-out;
+  -moz-transition: .2s ease-in-out;
+  -o-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+#leftPhoto:hover {
+  -webkit-transform: rotateY(30deg);
+  -moz-transform: rotateY(30deg);
+  -o-transform: rotateY(30deg);
+  -ms-transform: rotateY(30deg);
+  transform: rotateY(30deg);
+}
+
+#rightPhoto {
+  width: 150px;
+  float: right;
+  border-radius: 75px;
+  border: 1px #ffd6c0 solid;
+  display: inline;
+  margin-right: 45px;
+  -webkit-transition: .2s ease-in-out;
+  -moz-transition: .2s ease-in-out;
+  -o-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
+}
+
+#rightPhoto:hover {
+  -webkit-transform: rotateY(30deg);
+  -moz-transform: rotateY(30deg);
+  -o-transform: rotateY(30deg);
+  -ms-transform: rotateY(30deg);
+  transform: rotateY(30deg);
+}
+
 .signature {
   text-align: right;
   padding-bottom: 30px;
@@ -334,8 +378,33 @@ footer {
     border-bottom: 1px solid #442211;
 }
 
+.bottomBorder {
+    border-bottom: 1px solid #ffd6c0;
+}
+
 /* Key Frame for Section Fade In */
 @-webkit-keyframes fadein {
     from { opacity: 0; }
     to   { opacity: 1; }
+}
+
+/* Classes for portfolio.html */
+.site {
+  margin: 0 auto;
+  text-align: center;
+  width: 75%;
+  color: #442211;
+}
+
+.site p {
+  padding-top: 10px;
+  margin: 0;
+  font-size: .8em;
+  text-indent: 0;
+}
+
+.site ul {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: .8em;
 }
