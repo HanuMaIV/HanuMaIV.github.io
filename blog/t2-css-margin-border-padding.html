@@ -84,21 +84,31 @@
           <img src="../images/cork-board-nb.png">
           <p>Imagine this cork board as a div.</p>
           <p>-Now if you want to be productive with your cork board .... you need a wall to hang it on. The wall that your element hangs on is it's parent element. This parent can be many things .......a body tag, li tag, even another div. What the tag is isn't very important, the important thing you need to understand is that the parent element is the box that your current box lives in. Or in other words the wall that your cork board hangs on.</p>
-          <div class="wall"><div><img src="../images/cork-board-nb.png"></div>Wall</div>
-          <p>Wow our web handyman installed that corkboard nicely</p>
+          <div class="wall">
+            <div><img src="../images/cork-board-nb.png"></div>Wall
+          </div>
+          <p>Wow our web handyman installed that cork board nicely</p>
           <h2>2. Margin</h2>
           <p>Margin is the spacial relation of an element to it's parent. So for our example...... the relation of our cork board to our wall.</p>
           <p>-Here we will install our cork board to our wall with no margin.</p>
-          <div class="wall"><div class="corkBoard"></div>Wall</div>
-          <p>By default is aligns nice and flush with the top left corner of the wall.</p>
+          <div class="wall">
+            <div class="corkBoard"></div>Wall
+          </div>
+          <p>By default it aligns nice and flush with the top left corner of the wall.</p>
           <p>-Here we will install our cork board to our wall with a left-margin of 50 pixels.</p>
-          <div class="wall"><div class="corkBoard marginL50"></div>Wall</div>
+          <div class="wall">
+            <div class="corkBoard marginL50"></div>Wall
+          </div>
           <p>See the spacing from the left of the wall? That's your margin.</p>
           <p>-Next we will install our cork board to our wall with a top-margin of 50 pixels.</p>
-          <div class="wall"><div class="corkBoard marginT50"></div>Wall</div>
+          <div class="wall">
+            <div class="corkBoard marginT50"></div>Wall
+          </div>
           <p>See the spacing from the top of the wall?</p>
           <p>-You can also specify more than one margin. Here we will install our cork board to our wall with a top-margin of 50 pixels and a left-margin of 50px.</p>
-          <div class="wall"><div class="corkBoard marginT50L50"></div>Wall</div>
+          <div class="wall">
+            <div class="corkBoard marginT50L50"></div>Wall
+          </div>
           <p>See the spacing from the top and right sides of the wall?</p>
            <p>-You can also specify margins from the bottom and right sides of the wall. Here we will install our cork board to our wall with a bottom-margin of 50 pixels and a right-margin of 50px.</p>
           <div class="wall">
@@ -106,44 +116,48 @@
             <div class="clear"></div>
             <div class="corkBoard marginR50B50"></div>
           </div>
-            <p>Here we have floated our cork board to the right. And you can see that our cork board has a margin 50 pixels from the right. Also note that I have inserted another cork board to show that there is a margin of 50 pixels below our initial cork board.</p>
-            <p>-So to summarize .....Margin occupies the space around the outside of an element (our cork board).</p>
-            <h2>3. Border</h2>
-            <p>-Understanding border is pretty simple. Border is simply the area around the physical space that our cork board takes up.</p>
-            <div class="wall">
-              <div class="corkBoard corkBoardBorder1"></div>
-              <div class="corkBoard corkBoardBorder5"></div>
-            </div>
-            <p>In the example above we have hung up two cork boards one with a border of 1 pixel and another with a border of 5 pixels. It's simple as that. Border is just the area located directly around an element.</p>
-            <h2>4. Padding</h2>
-            <p>-And finally we get to padding. Padding is the area within the interior of the border that is occupied before any content is displayed in your element. Just stay with me.</p>
-            <div class="wall"><div class="corkBoard center"><div class="note"></div></div>Wall</div>
-            <p>Here our cork board has a nice centered margin and 50 pixels from the top. And let's say this yellow post-it note is the content within our cork board. By default content will align to the upper left corner just like we saw when we first hung the cork board on the wall. We can set spacing of the content which occupies our cork board by using padding. Let's give it a try.</p>
-            <p>-Let's setup some padding to this cork board</p>
-            <div class="wall"><div class="corkBoard center corkPaddingT25L25"><div class="note"></div></div>Wall</div>
-            <p>We have padded the content of our cork board with 25 pixels to the left and from the top. Padding is true to it's name. It just adds padding around the interior of the border in your element.</p>
+          <p>Here we have floated our cork board to the right. And you can see that our cork board has a margin 50 pixels from the right. Also note that I have inserted another cork board to show that there is a margin of 50 pixels below our initial cork board.</p>
+          <p>-So to summarize .....Margin occupies the space around the outside of an element (our cork board).</p>
+          <h2>3. Border</h2>
+          <p>-Understanding border is pretty simple. Border is simply the area around the physical space that our cork board takes up.</p>
+          <div class="wall">
+            <div class="corkBoard corkBoardBorder1"></div>
+            <div class="corkBoard corkBoardBorder5"></div>
+          </div>
+          <p>In the example above we have hung up two cork boards one with a border of 1 pixel and another with a border of 5 pixels. It's simple as that. Border is just the area located directly around an element.</p>
+          <h2>4. Padding</h2>
+          <p>-And finally we get to padding. Padding is the area within the interior of the border that is occupied before any content is displayed in your element. Just stay with me.</p>
+          <div class="wall">
+            <div class="corkBoard center">
+              <div class="note"></div>
+            </div>Wall
+          </div>
+          <p>Here our cork board has a nice centered margin and 50 pixels from the top. And let's say this yellow post-it note is the content within our cork board. By default content will align to the upper left corner just like we saw when we first hung the cork board on the wall. We can set spacing of the content which occupies our cork board by using padding. Let's give it a try.</p>
+          <p>-Let's setup some padding to this cork board</p>
+          <div class="wall">
+            <div class="corkBoard center corkPaddingT25L25">
+              <div class="note"></div>
+            </div>Wall
+          </div>
+          <p>We have padded the content of our cork board with 25 pixels to the left and from the top. Padding is true to it's name. It just adds padding around the interior of the border in your element.</p>
 
-            <h2>4. Summary</h2>
-              <ul>
-                <li>Margin: Sets the space around the element.</li>
-                <li>Border: Shows the area directly around your element and is helpful in showing the boundaries of your actual element.</li>
-                <li>Padding: Sets the spacing in the interior of your element. (pads content).</li>
-              </ul>
-              <p>I hope you've found this tutorial helpful. If you have any questions or comments feel free to send me a message on my <a href="../contact.html">contact page</a>.</p>
-              <p>For more information on margin, padding, and border check out these links:</p>
-              <ul>
-                <li><a href="http://www.w3.org/wiki/The_CSS_layout_model_-_boxes_borders_margins_padding" target="_new" >The CSS layout model</a></li>
-                <li><a href="http://css-tricks.com/almanac/properties/m/margin/" target="_new" >CSS Tricks Margin</a></li>
-                <li><a href="http://css-tricks.com/almanac/properties/b/border/" target="_new" >CSS Tricks Border</a></li>
-                <li><a href="http://css-tricks.com/almanac/properties/p/padding/" target="_new" >CSS Tricks Padding</a></li>
-              </ul>
-
-
-
-
-        </div>
-           <p class="signature">- <span class="cursive">Brendan R. Miranda</span></p>
-           <p class="textCenter"><a href="../blog.html#blogTable">- Read more blog entries -</a></p>
+          <h2>4. Summary</h2>
+            <ul>
+              <li>Margin: Sets the space around the element.</li>
+              <li>Border: Shows the area directly around your element and is helpful in showing the boundaries of your actual element.</li>
+              <li>Padding: Sets the spacing in the interior of your element. (pads content).</li>
+            </ul>
+            <p>I hope you've found this tutorial helpful. If you have any questions or comments feel free to send me a message on my <a href="../contact.html">contact page</a>.</p>
+            <p>For more information on margin, padding, and border check out these links:</p>
+            <ul>
+              <li><a href="http://www.w3.org/wiki/The_CSS_layout_model_-_boxes_borders_margins_padding" target="_new" >The CSS layout model</a></li>
+              <li><a href="http://css-tricks.com/almanac/properties/m/margin/" target="_new" >CSS Tricks Margin</a></li>
+              <li><a href="http://css-tricks.com/almanac/properties/b/border/" target="_new" >CSS Tricks Border</a></li>
+              <li><a href="http://css-tricks.com/almanac/properties/p/padding/" target="_new" >CSS Tricks Padding</a></li>
+            </ul>
+          </div>
+          <p class="signature">- <span class="cursive">Brendan R. Miranda</span></p>
+          <p class="textCenter"><a href="../blog.html#blogTable">- Read more blog entries -</a></p>
       </section>
 
       <footer>
@@ -177,11 +191,11 @@
             </li>
           </a>
         </ul>
-      <a href="#top">
-        <div id="footer-copyright">
-          <p id="footerText"></p>
-        </div>
-      </a>
-      </footer>
-    </body>
-  </html>
+        <a href="#top">
+          <div id="footer-copyright">
+            <p id="footerText"></p>
+          </div>
+        </a>
+    </footer>
+  </body>
+</html>
