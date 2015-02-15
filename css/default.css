@@ -438,5 +438,8 @@ footer {
   .navLinks li {
     display: block;
     font-size: 2em;
+    margin: 0 auto;
+    padding: 0;
+    width: 2.2em;
   }
 }
