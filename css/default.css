@@ -431,7 +431,7 @@ footer {
   height: 800px;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 640px) {
   .navLinks i, br {
     display: none;
   }
@@ -444,4 +444,8 @@ footer {
     padding-bottom: 5px;
     width: 2.2em;
   }
+
+  #footer-copyright:before {
+  content: "Back to top of Page";
+}
 }
