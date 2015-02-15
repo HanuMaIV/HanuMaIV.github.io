@@ -42,7 +42,7 @@ h1 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 3em;
 }
 
 h3 {
@@ -133,7 +133,7 @@ body#blogPost  {
 }
 
 /* Header Navigation Link Styles */
-#navLinks {
+.navLinks {
   padding-top: 35px;
   padding-bottom: 20px;
   -webkit-transition: all 0.5s ease-in-out;
@@ -142,7 +142,7 @@ body#blogPost  {
   transition: all 0.5s ease-in-out;
 }
 
-#navLinks li {
+.navLinks li {
   margin-top: 5px;
   margin-bottom: 5px;
   margin-left: 25px;
@@ -167,6 +167,14 @@ body#blogPost  {
     transition: 0.5s ease-in-out;
   }
 
+  .navIcon a {
+    color: #ffd6c0;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+  }
+
 .navIcon:hover {
   border-radius: 15px;
   color: #442211;
@@ -178,7 +186,11 @@ body#blogPost  {
   transform: scale(1.3) ;
 }
 
-.activeLink {
+.navIcon:hover a {
+  color: #442211;
+}
+
+.activeLink a {
   color: #443311;
 }
 
@@ -412,4 +424,10 @@ footer {
 #contactForm {
   width: 80%;
   margin: 0 auto;
+}
+
+#contactForm iframe {
+  width:100%;
+  height: 800px;
+
 }
