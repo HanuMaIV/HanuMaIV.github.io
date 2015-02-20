@@ -367,7 +367,7 @@ footer {
 }
 
 #footer-copyright:hover:before {
-  content: "Back to top of page";
+  content: "Back to top of Page";
   font-family: Anson;
   font-size: 1em;
 }
