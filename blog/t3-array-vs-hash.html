@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="../css/reset.css" media="screen">
+      <link rel="stylesheet" href="../css/default.css" media="screen">
+      <link rel="stylesheet" href="../css/blog-stylesheet.css" media="screen">
+      <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css">
+      <meta name="viewport" content="initial-scale=1">
+      <title>Array VS Hash | Brendan Miranda Software Writer</title>
+    </head>
+    <body id="blogPost">
+      <header>
+        <a id="top"></a>
+        <a href="../index.html">
+          <div id="logo">
+            <h2>Brendan Miranda</h2>
+            <span>- Software Writer -</span>
+          </div>
+        </a>
+        <ul class="navLinks">
+          <li class="navIcon">
+            <a href="../index.html">
+              <i class="fa fa-home fa-2x"></i>
+              <br>
+              <span class="navText">Home</span>
+            </a>
+          </li>
+          <li class="navIcon">
+            <a href="../about.html">
+              <i class="fa fa-mars fa-2x"></i>
+              <br>
+              <span class="navText">About</span>
+            </a>
+          </li>
+          <li class="navIcon activeLink">
+            <a href="../blog.html">
+              <i class="fa fa-newspaper-o fa-2x"></i>
+              <br>
+              <span class="navText">Blog</span>
+            </a>
+          </li>
+          <li class="navIcon">
+            <a href="../portfolio.html">
+              <i class="fa fa-code fa-2x"></i>
+              <br>
+              <span class="navText">Work</span>
+            </a>
+          </li>
+          <li class="navIcon">
+            <a href="../contact.html">
+              <i class="fa fa-bullhorn fa-2x"></i>
+              <br>
+              <span class="navText">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </header>
+
+      <section>
+        <h1>Technical Blog Week 3</h1>
+        <img id="homePhoto" src="../images/brendan.jpeg" alt="Brendan Miranda Photo">
+        <div class="blogEntry">
+          <p><i class="fa fa-quote-left fa-2x"></i></p>
+
+          <h3>What's the difference between an array an a hash?</h3>
+
+          <p>In ruby Arrays are ordered, integer-indexed collections of any object.</p>
+
+          <p>When programming we first learn to store single pieces of information into variables in a way such as:</p>
+
+          <ul>
+          <li>eye_color = brown</li>
+          <li>takes_showers = true</li>
+          <li>age = 33</li>
+
+          <p>This is all fine and dandy but what about when we want to hold more than one piece of information? Here comes the simple array.</p>
+
+          <h3>Simple Array</h3>
+
+          <p>Simple arrays can contain more than one piece of information. They do this by assigning a key and value to every element in the array.</p>
+
+          <p>Let's create an array and take a closer look:</p>
+
+          <pre><code>new_array = ["brown", true, 33]</code></pre>
+
+          <p>Here we can see that arrays are created within [] brackets with the values separated with comas. What we can't really see here is the key. The handy chart below shows the key and values pairs for the new_array that we have created.</p>
+
+          <table>
+            <caption>new_array</caption>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>0</td>
+              <td>brown</td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>33</td>
+            </tr>
+          </table>
+          <p>We can see that the values are paired with a key. The keys in this simple array are just integer values starting at 0. Meaning that the first value of the array will start at 0.</p>
+          <p>We can access our values in the array by referencing the integer index in brackets following the array name as shown below:</p>
+          <pre><code>new_array[0]
+          => "brown"</code></pre>
+          <pre><code>new_array[1]
+          => true</code></pre>
+          <pre><code>new_array[2]
+          => 33</code></pre>
+          <p>Great now we have a handy way of storing and accessing more than one element in a data structure.</p>
+          <p>But indexes of [0], [1], [2], [3]..... don't really tell us much about the value of our data. What if we'd like a more descriptive way to index our values into keys?</p>
+          <h3>Hash (associative array) to the rescue</h3>
+          <p>In ruby we can associate our values to keys in a more descriptive way by using hashes.</p>
+          <p>Let's create one now:</p>
+          <pre><code>new_hash = {"eye_color" => "brown",
+            "takes_showers" => true,
+            "age" => 33}</code></pre>
+          <p>Here we have successfully created a hash. You can see the hash keys and values are enclosed in parenthesis {}. The keys here are enclosed in quotes "" followed by a => then the corresponding value.</p>
+          <p>Let's take a closer look at how the key and value pairs are indexed.</p>
+          <table>
+            <caption>new_hash</caption>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>"eye_color"</td>
+              <td>brown</td>
+            </tr>
+            <tr>
+              <td>"takes_showers"</td>
+              <td>true</td>
+            </tr>
+            <tr>
+              <td>"age"</td>
+              <td>33</td>
+            </tr>
+          </table>
+          <p>Wow that was simple. Now we can see that our key names contain more information about the value that they are associated with. So much better than 1,2,3,4 etc...</p>
+          <p>We can access our hash values in a similar way to simple array but instead of using an index number we reference the key name enclosed in quotes.</p>
+          <pre><code>new_hash["eye_color"]
+            => "brown"</code></pre>
+          <pre><code>new_hash["takes_showers"]
+            => true</code></pre>
+          <pre><code>new_hash["age"]
+            => 33</code></pre>
+          <p>Wow very simple and also might I say that based on the data provided that new_hash seems like quite the catch.</p>
+          <h3>Summary</h3>
+          <p>To recap:</p>
+          <ul>
+            <li>Simple Arrays and Hashes both contain key and pair values.</li>
+            <li>Simple Array keys are indexed using integers starting at 0 and going up depending on how many items are added to the array.</li>
+            <li>Hash keys can be more descriptive about the value they are associated with.</li>
+            <li>Hash keys are indexed using a user inputed string or symbol.</li>
+          </ul>
+            <p>Just as a closing thought this article discusses arrays and hashes in the context of the ruby language. Further studies can reveal that both Simple Arrays and Hashes (associative arrays) can be considered a type of array. What??? what???? what??????</p>
+            <p>Read the following for more on that:</p>
+            <ul>
+              <li><a href="http://en.wikipedia.org/wiki/Array" target="new">Wikipedia: Array</a></li>
+              <li><a href="http://en.wikipedia.org/wiki/Array_data_structure" target="new">Wikipedia: Array Data Structure</a></li>
+              <li><a href="http://en.wikipedia.org/wiki/Associative_array" target="new">Wikipedia: Associative Array</a></li>
+            </ul>
+        </div>
+           <p class="signature">- <span class="cursive">Brendan R. Miranda</span></p>
+           <p class="textCenter"><a href="../blog.html#blogTable">- Read more blog entries -</a></p>
+      </section>
+
+      <footer>
+        <ul class="navLinks">
+            <li class="navIcon">
+              <a href="https://github.com/HanuMaIV"  target="new">
+                <i class="fa fa-github fa-2x"></i>
+                <br>
+                <span class="navText">GitHub</span>
+              </a>
+            </li>
+            <li class="navIcon">
+              <a href="https://twitter.com/musictrainer" target="new">
+                <i class="fa fa-twitter fa-2x"></i>
+                <br>
+                <span class="navText">Twitter</span>
+              </a>
+            </li>
+            <li class="navIcon">
+              <a href="https://www.facebook.com/MusicTrainer" target="new">
+                <i class="fa fa-facebook fa-2x"></i>
+                <br>
+                <span class="navText">Facebook</span>
+              </a>
+            </li>
+            <li class="navIcon">
+              <a href="http://www.linkedin.com/in/brendanmiranda" target="new">
+                <i class="fa fa-linkedin fa-2x"></i>
+                <br>
+                <span class="navText">LinkedIn</span>
+              </a>
+            </li>
+        </ul>
+      <a href="#top">
+        <div id="footer-copyright">
+          <p id="footerText"></p>
+        </div>
+      </a>
+    </footer>
+  </body>
+</html>

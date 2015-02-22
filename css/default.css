@@ -67,6 +67,10 @@ table {
   line-height: 1.4em;
 }
 
+pre {
+  font-family: "Courier New", Courier, monospace;
+}
+
 th {
     padding: 10px;
     border-bottom: 1px solid #442211;
