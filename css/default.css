@@ -445,7 +445,11 @@ footer {
   height: 800px;
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 880px) {
+  pre {
+    text-wrap: unrestricted;
+    word-wrap: break-word;
+  }
   .navLinks i, br {
     display: none;
   }
