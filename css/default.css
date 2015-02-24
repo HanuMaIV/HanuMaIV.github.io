@@ -69,6 +69,10 @@ table {
 
 pre {
   font-family: "Courier New", Courier, monospace;
+  text-align: left;
+  background-color: black;
+  padding: 10px;
+  color: #5eff1f;
 }
 
 th {
@@ -379,6 +383,12 @@ footer {
 /* Misc Classes */
 .textCenter {
   text-align: center;
+}
+
+.space {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 1px solid;
 }
 
   /* Border for Blog Table */

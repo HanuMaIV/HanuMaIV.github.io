@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="../css/reset.css" media="screen">
+      <link rel="stylesheet" href="../css/default.css" media="screen">
+      <link rel="stylesheet" href="../css/blog-stylesheet.css" media="screen">
+      <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css">
+      <meta name="viewport" content="initial-scale=1">
+      <title>Ruby's group_by enumerable | Brendan Miranda Software Writer</title>
+    </head>
+    <body id="blogPost">
+      <header>
+        <a id="top"></a>
+        <a href="../index.html">
+          <div id="logo">
+            <h2>Brendan Miranda</h2>
+            <span>- Software Writer -</span>
+          </div>
+        </a>
+        <ul class="navLinks">
+          <li class="navIcon">
+            <a href="../index.html">
+              <i class="fa fa-home fa-2x"></i>
+              <br>
+              <span class="navText">Home</span>
+            </a>
+          </li>
+          <li class="navIcon">
+            <a href="../about.html">
+              <i class="fa fa-mars fa-2x"></i>
+              <br>
+              <span class="navText">About</span>
+            </a>
+          </li>
+          <li class="navIcon activeLink">
+            <a href="../blog.html">
+              <i class="fa fa-newspaper-o fa-2x"></i>
+              <br>
+              <span class="navText">Blog</span>
+            </a>
+          </li>
+          <li class="navIcon">
+            <a href="../portfolio.html">
+              <i class="fa fa-code fa-2x"></i>
+              <br>
+              <span class="navText">Work</span>
+            </a>
+          </li>
+          <li class="navIcon">
+            <a href="../contact.html">
+              <i class="fa fa-bullhorn fa-2x"></i>
+              <br>
+              <span class="navText">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </header>
+
+      <section>
+        <h1>Demystifying Ruby's group_by enumerable</h1>
+        <img id="homePhoto" src="../images/brendan.jpeg" alt="Brendan Miranda Photo">
+        <div class="blogEntry">
+          <p>So you want to understand and possibly use Ruby's group_by enumerable? Well you've come to the right place.</p>
+          <p><a href="http://ruby-doc.org/core-2.2.0/Enumerable.html#method-i-group_by" target="new">ruby-doc.org</a> defines group_by as doing the following:</p>
+          <p><em>"Groups the collection by result of the block. Returns a hash where the keys are the evaluated result from the block and the values are arrays of elements in the collection that correspond to the key. If no block is given an enumerator is returned."</em></p>
+          <p>Let me know when your head stops hurting from reading that previous paragraph. I learn best by actually doing. So let's try out some code.</p>
+          <h3 class="space">Is member of group equal to 2?</h3>
+          <p><pre><code>[1,2,3].group_by {|v| v == 2}</code></pre></p>
+          <p>Here we have a simple array containing the fixnum values of 1, 2 and 3. And we have applied the group_by enumerable to this array.
+          <p>Following the group_by enumerable we have applied a block which evaluates the current value of the array and checks to see if it is equal to 2.</p>
+          <p>So from the array 1 and 3 will evaluate to false and 2 will evaluate to true since "2 == 2" is true.</p>
+          <p>group_by will output a hash containing keys corresponding to the result of the block (in this case true or false) and the values being the elements from the array which evaluated to the either true or false.</p>
+          <p>Here is the code again with it's output:</p>
+          <p><pre><code>[1,2,3].group_by {|v| v == 2}
+
+-------
+Output:
+-------
+=> {false=>[1, 3], true=>[2]}</code></pre></p>
+          <h3 class="space">Is member of group divisable by 5?</h3>
+          <p>Let's try another example:</p>
+          <p><pre><code>[4,5,9,10,16,20,41,95,100].group_by { |v| v % 5 == 0 }</code></pre></p>
+          <p>Above we have an array with various fixnum values followed by the group_by enumerable. We then execute a block to check to see if the values from the array are divisible by 5. This block will evaluate to either true or false, so true and false will be the keys of our output hash. The key false will contain the numbers not divisible by 5. The key of true will contain numbers divisible by 5.</p>
+          <p><pre><code>[4,5,9,10,16,20,41,95,100].group_by { |v| v % 5 == 0 }
+
+-------
+Output:
+-------
+=> {false=>[4, 9, 16, 41], true=>[5, 10, 20, 95, 100]}</code></pre></p>
+          <h3 class="space">Does member of group contain "Mrs." ?</h3>
+          <p>Group by is not just for fixnum values, let's try it on string values. We'll start with an array of names. In this array we will have Ms. and Mrs. followed by last name. We can use the group_by enumerable to sort these names based on if their name includes "Mrs."</p><p><pre><code>names = ["Mrs. Mitchell", "Ms. Banks",
+          "Mrs. Thompson", "Mrs. Parker",
+          "Ms. Johnson"]
+
+names.group_by {|v| v.include?("Mrs.")}
+
+-------
+Output:
+-------
+=> {false=>["Ms. Johnson", "Ms. Banks"],
+true=>["Mrs. Parker", "Mrs. Thompson", "Mrs. Mitchell"]}</code></pre></p>
+        <h3 class="space">group_by on a hash with a conditional</h3>
+          <p>Let's try it on a hash now. This code will output a hash with a names and test score with the letter grade. First we create a hash with names as keys and test score as values. Next we assign the grade variable to hold the result of the group_by enumerable output. In this enumerable we setup the case conditional statement to separate the scores and return an appropriate letter grade depending on the score.</p>
+
+          <pre><code>
+hash = { Brendan_Miranda: 92, Rachael_Levitt: 96,
+Kanye_West: 59, Bill_Nye: 83, Bob_Sagat: 73,
+Jessica_Simpson: 63}
+
+grades = hash.group_by do |k,v|
+  case
+    when v < 60
+      "F"
+    when v < 70
+      "D"
+    when v < 80
+      "C"
+    when v < 90
+      "B"
+    else
+      "A"
+  end
+end
+
+-------
+Output:
+-------
+=> {"A"=>[[:Brendan_Miranda, 92], [:Rachael_Levitt, 96]],
+"F"=>[[:Kanye_West, 59]],
+"B"=>[[:Bill_Nye, 83]],
+"C"=>[[:Bob_Sagat, 73]],
+"D"=>[[:Jessica_Simpson, 63]]}
+
+          </code></pre>
+<h3 class="space">Conclusion</h3>
+          <p>I hope you've enjoyed this journey into the group_by enumerable. We are just scratching the surface on the tasks that this powerful tool can easily facilitate. Get creative with it. Send me anything cool you come up with on my <a href="../contact.html">contact page</a>.</p>
+
+        </div>
+           <p class="signature">- <span class="cursive">Brendan R. Miranda</span></p>
+           <p class="textCenter"><a href="../blog.html#blogTable">- Read more blog entries -</a></p>
+      </section>
+
+      <footer>
+        <ul class="navLinks">
+            <li class="navIcon">
+              <a href="https://github.com/HanuMaIV"  target="new">
+                <i class="fa fa-github fa-2x"></i>
+                <br>
+                <span class="navText">GitHub</span>
+              </a>
+            </li>
+            <li class="navIcon">
+              <a href="https://twitter.com/musictrainer" target="new">
+                <i class="fa fa-twitter fa-2x"></i>
+                <br>
+                <span class="navText">Twitter</span>
+              </a>
+            </li>
+            <li class="navIcon">
+              <a href="https://www.facebook.com/MusicTrainer" target="new">
+                <i class="fa fa-facebook fa-2x"></i>
+                <br>
+                <span class="navText">Facebook</span>
+              </a>
+            </li>
+            <li class="navIcon">
+              <a href="http://www.linkedin.com/in/brendanmiranda" target="new">
+                <i class="fa fa-linkedin fa-2x"></i>
+                <br>
+                <span class="navText">LinkedIn</span>
+              </a>
+            </li>
+        </ul>
+      <a href="#top">
+        <div id="footer-copyright">
+          <p id="footerText"></p>
+        </div>
+      </a>
+    </footer>
+  </body>
+</html>
