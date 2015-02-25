@@ -122,15 +122,17 @@ grades = hash.group_by do |k,v|
       "A"
   end
 end
+grades.keys.sort.each { |k| grades[k] = grades.delete k }
+grades
 
 -------
 Output:
 -------
 => {"A"=>[[:Brendan_Miranda, 92], [:Rachael_Levitt, 96]],
-"F"=>[[:Kanye_West, 59]],
 "B"=>[[:Bill_Nye, 83]],
 "C"=>[[:Bob_Sagat, 73]],
-"D"=>[[:Jessica_Simpson, 63]]}
+"D"=>[[:Jessica_Simpson, 63]],
+"F"=>[[:Kanye_West, 59]]}
 
           </code></pre>
 <h3 class="space">Conclusion</h3>
