@@ -73,6 +73,8 @@ pre {
   background-color: black;
   padding: 10px;
   color: #5eff1f;
+  text-wrap: unrestricted;
+  word-wrap: break-word;
 }
 
 th {
