@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="../css/reset.css" media="screen">
+      <link rel="stylesheet" href="../css/default.css" media="screen">
+      <link rel="stylesheet" href="../css/blog-stylesheet.css" media="screen">
+      <link rel="stylesheet" href="../fonts/font-awesome/css/font-awesome.min.css">
+      <meta name="viewport" content="initial-scale=1">
+      <title>Ruby Hashes vs. JavaScript Objects | Brendan Miranda Software Writer</title>
+    </head>
+    <body id="blogPost">
+      <header>
+        <a id="top"></a>
+        <a href="../index.html">
+          <div id="logo">
+            <h2>Brendan Miranda</h2>
+            <span>- Software Writer -</span>
+          </div>
+        </a>
+        <ul class="navLinks">
+          <li class="navIcon">
+            <a href="../index.html">
+              <i class="fa fa-home fa-2x"></i>
+              <br>
+              <span class="navText">Home</span>
+            </a>
+          </li>
+          <li class="navIcon">
+            <a href="../about.html">
+              <i class="fa fa-mars fa-2x"></i>
+              <br>
+              <span class="navText">About</span>
+            </a>
+          </li>
+          <li class="navIcon activeLink">
+            <a href="../blog.html">
+              <i class="fa fa-newspaper-o fa-2x"></i>
+              <br>
+              <span class="navText">Blog</span>
+            </a>
+          </li>
+          <li class="navIcon">
+            <a href="../portfolio.html">
+              <i class="fa fa-code fa-2x"></i>
+              <br>
+              <span class="navText">Work</span>
+            </a>
+          </li>
+          <li class="navIcon">
+            <a href="../contact.html">
+              <i class="fa fa-bullhorn fa-2x"></i>
+              <br>
+              <span class="navText">Contact</span>
+            </a>
+          </li>
+        </ul>
+      </header>
+
+      <section>
+        <h1>Ruby Hashes vs. JavaScript Objects</h1>
+        <img id="homePhoto" src="../images/brendan.jpeg" alt="Brendan Miranda Photo">
+        <div class="blogEntry">
+          <h3>Syntax</h3>
+          <p>Let's take a look at Ruby hashes and Javascript Objects. The Ruby hash and the Javascript Object look very similar but are quite different once you take a closer look. You will see what I mean as I create both below.</p>
+          <h3>Creating a Ruby Hash and Javascript Object</h3>
+<pre>#Ruby Hash
+  brendan = {name: "Brendan", height: "6'1", weight: 170}
+
+
+//Javascript Object
+var brendan = {name: "Brendan", height: "6'1", weight: 170 }
+      </pre>
+      <p>See how similar they look? Let's look at each in a closer detail.</p>
+      <h3>The Ruby Hash</h3>
+      <p>A hash is simply a collection of key value pairs. Much like the simple array. The difference being that instead of a number index a hash has a "dictionary" type index in which a word is the Key that maps to a certain value. For example:</p>
+      <pre>
+#Simple array
+brendan = ["Brendan", "6'1", 170]
+
+#Simple Array values are accessed with an index
+array[0]
+=> "Brendan"
+
+array[1]
+=> "6'1"
+
+array[2]
+=> 170
+
+##############################
+#Ruby Hash
+brendan = {name: "Brendan", height: "6'1", weight: 170}
+
+#Values are accessed using a dictionary type index
+brendan[:name]
+=> "Brendan"
+
+brendan[:height]
+=> "6'1"
+
+brendan[:weight]
+=> 170
+
+
+
+      </pre>
+      <p>It's apparent that the Ruby simple array and hash are quite similar. Both are just key and value pairs with a different way of indexing values.</p>
+      <h3>Javascript Object</h3>
+      <p>Javascript objects are standalone entities. with properties and type. The properties of javascript objects are similar to variables but in this case the variables are associated to the parent object. Properties of Javascript objects can be accessed by using dot notation. Let's see this in action</p>
+      <pre>
+var brendan = {name: "Brendan", height: "6'1", weight: 170 }
+
+brendan.name
+=> 'Brendan'
+
+brendan.height
+=> '6\'1'
+
+brendan.weight
+=> 170
+      </pre>
+      <p>When functions are associated with objects they are called methods. Lets take a look:</p>
+      <pre>
+var brendan = {name: "Brendan",
+               height: "6'1",
+               weight: 170,
+
+               // Defining method here
+               introduce: function() {
+               console.log("Hello my name is " + this.name + ".");
+             }
+};
+
+// Calling Method
+brendan.introduce();
+=> Hello my name is Brendan.
+
+      </pre>
+      <h3>Summary</h3>
+      <p>You can start to see that Javascript objects are much more complicated than just a simple Key Value pairing (as in the Ruby Hash). We have explored some of the differences between the two, but there is much more to learn about both Ruby Hashes and Javascript objects.</p>
+
+      <p>For further reading check out:</p>
+      <ul>
+        <li><a href="http://eloquentjavascript.net/06_object.html">Eloquent Javascript - Objects</a></li>
+        <li><a href="http://ruby-doc.org/core-2.2.0/Hash.html">Ruby Docs - Hash</a></li>
+      </ul>
+
+        </div>
+           <p class="signature">- <span class="cursive">Brendan R. Miranda</span></p>
+           <p class="textCenter"><a href="../blog.html#blogTable">- Read more blog entries -</a></p>
+      </section>
+
+      <footer>
+        <ul class="navLinks">
+            <li class="navIcon">
+              <a href="https://github.com/HanuMaIV"  target="new">
+                <i class="fa fa-github fa-2x"></i>
+                <br>
+                <span class="navText">GitHub</span>
+              </a>
+            </li>
+            <li class="navIcon">
+              <a href="https://twitter.com/musictrainer" target="new">
+                <i class="fa fa-twitter fa-2x"></i>
+                <br>
+                <span class="navText">Twitter</span>
+              </a>
+            </li>
+            <li class="navIcon">
+              <a href="https://www.facebook.com/MusicTrainer" target="new">
+                <i class="fa fa-facebook fa-2x"></i>
+                <br>
+                <span class="navText">Facebook</span>
+              </a>
+            </li>
+            <li class="navIcon">
+              <a href="http://www.linkedin.com/in/brendanmiranda" target="new">
+                <i class="fa fa-linkedin fa-2x"></i>
+                <br>
+                <span class="navText">LinkedIn</span>
+              </a>
+            </li>
+        </ul>
+      <a href="#top">
+        <div id="footer-copyright">
+          <p id="footerText"></p>
+        </div>
+      </a>
+    </footer>
+  </body>
+</html>
