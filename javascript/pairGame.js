@@ -64,11 +64,11 @@ var pairMatch = friends[randomPair()].name;
 // Create Variable to hold the name of the closest partner
 // Initially set to null will stay at null
 // unless directly next to another player where it is assigned to be
-// the value of the name of the closets player.
+// the value of the name of the closest player.
 var closestPlayerValue = null;
 
 
-// Runs everytime Player is moved and returns value of closest partner
+// Runs every time Player is moved and returns value of closest partner
 function closestPlayer() {
   if ((playerLeft == 430) && (playerTop == 4)){
     closestPlayerValue = geo.name;
