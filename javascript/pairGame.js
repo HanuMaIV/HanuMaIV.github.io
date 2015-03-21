@@ -69,7 +69,7 @@ var backgroundMusic = new Audio('../sounds/backgroundMusic.mp3');
     marcoDiv.style.top = marco.position.y + "px";
 
 
-      function anim(e){
+      function keyReader(e){
         if(e.keyCode == 39) {
           if (playerLeft + 140 > 500) {
             error.play();
@@ -141,4 +141,4 @@ var backgroundMusic = new Audio('../sounds/backgroundMusic.mp3');
 
 
 
-    document.onkeydown = anim;
+    document.onkeydown = keyReader;
