@@ -9,7 +9,7 @@ ul {
 }
 
 #room {
-  background-image: url("http://hanumaiv.github.io/images/woodFloor.jpg" !important);
+  background-image: url("http://hanumaiv.github.io/images/woodFloor.jpg") !important;
   margin: auto;
   width: 640px;
   height: 480px;
