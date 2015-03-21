@@ -36,6 +36,27 @@ ul {
   margin: auto;
 }
 
+#lose {
+  margin: auto;
+  width: 640px;
+  height: 480px;
+  border: 2px #ffd6c0 solid;
+  background: red;
+  position: relative;
+  display: none;
+}
+
+
+
+#lose h1 {
+  margin-top: 181px;
+}
+
+#lose p {
+  width: 50%;
+  margin: auto;
+}
+
 
 
 
