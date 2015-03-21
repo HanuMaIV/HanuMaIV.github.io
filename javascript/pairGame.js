@@ -157,9 +157,8 @@ function keyReader(e){
     } else {
       loser.play();
     }
-
   }
-  if(e.keyCode == 78) {
+  if((e.keyCode == 78) && (gameEnded == true)){
     location.reload();
   }
 
