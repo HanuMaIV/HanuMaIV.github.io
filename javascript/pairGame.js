@@ -20,9 +20,8 @@ var loser = new Audio('../sounds/loser.mp3');
 var gameOver = new Audio('../sounds/gameOver.mp3');
 var error = new Audio('../sounds/invalidMove.mp3');
 
-//Access DOM elements
+//Access DOM element
 var playerImg = document.getElementById("player");
-var map = document.getElementById("room");
 
 // Create Player and Partner Objects
 var brendan = {name: "Brendan",
@@ -45,7 +44,7 @@ var marco = {name: "Marco",
 var playerLeft = brendan.position.x;
 var playerTop = brendan.position.y;
 
-// Set Positions for Partner Divs
+// Set Positions for Partner Divs based on Object values
 playerDiv.style.left = playerLeft + "px";
 playerDiv.style.top = playerTop + "px";
 geovannaDiv.style.left = geo.position.x + "px";
