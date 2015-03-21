@@ -64,7 +64,8 @@ var pairMatch = friends[randomPair()].name;
 // the value of the name of the closest player.
 var closestPlayerValue = null;
 
-// var
+// variables to keep track if game has ended
+// and if the hint has been shown
 var gameEnded = false;
 var hintShown = false;
 
@@ -168,4 +169,4 @@ function keyReader(e){
 document.onkeydown = keyReader;
 
 
-// Press H During Game For "Vidya" Mode
+// Press H During Game For "Vidya" (correct perception) mode.
