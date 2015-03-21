@@ -60,8 +60,9 @@ ul {
 
 
 #hint {
-  left: 240px;
-  top: 200px;
+  text-indent: 0;
+  left: 10px;
+  top: 10px;
   position: absolute;
   display: none;
   margin: auto;

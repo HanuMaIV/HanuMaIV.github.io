@@ -27,16 +27,16 @@ var brendan = {name: "Brendan",
               };
 
 var geo = {name: "Geovanna",
-          position: {x: 530, y: 5}
-          };
+          position: {x: 530, y: 5},
+          hint: "My Name Rhymes with Benihana"};
 
 var ace = {name: "Ace",
-           position: {x: 530, y: 181}
-          };
+          position: {x: 530, y: 181},
+          hint: "Highest Card in the Deck"};
 
 var marco = {name: "Marco",
-               position: {x: 530, y: 358}
-              };
+            position: {x: 530, y: 358},
+            hint: "I lived in France for Two Years"};
 
 // Create Variables to Hold Brendan's Current X and Y position
 var playerLeft = brendan.position.x;
@@ -56,7 +56,7 @@ marcoDiv.style.top = marco.position.y + "px";
 var friends = [geo, ace, marco];
 
 // Select random partner and store to pairMatch Variable
-var pairMatch = friends[randomPair()].name;
+var pairMatch = friends[randomPair()];
 
 // Create Variable to hold the name of the closest partner
 // Initially set to null will stay at null
@@ -134,13 +134,13 @@ function keyReader(e){
     }
     if ((e.keyCode == 72) && (hintShown == false)) {
       hintShown = true;
-      hint.innerHTML = pairMatch;
+      hint.innerHTML = pairMatch.hint;
       hint.style.display = "inline-block";
       hintSound.play();
     }
   }
   if(e.keyCode == 80) {
-    if ((pairMatch == closestPlayerValue) && (closestPlayerValue =! null) && (gameEnded == false)){
+    if ((pairMatch.name == closestPlayerValue) && (closestPlayerValue =! null) && (gameEnded == false)){
       backgroundMusic.pause();
       gameEnded = true;
       winSound.play();
@@ -168,4 +168,4 @@ function keyReader(e){
 document.onkeydown = keyReader;
 
 
-// Press H During Game For "Vidya" (correct perception) mode.
+// Press H During Game For a Hint
