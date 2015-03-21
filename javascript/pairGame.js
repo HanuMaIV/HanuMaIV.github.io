@@ -139,11 +139,13 @@ function keyReader(e){
   }
   if(e.keyCode == 80) {
     if ((pairMatch == closestPlayerValue) && (closestPlayerValue =! null)){
+      backgroundMusic.pause();
       winSound.play();
       room.style.display = "none";
       winner.style.display = "inline-block";
       cheer.play();
     } else if ((pairMatch != closestPlayerValue) && (closestPlayerValue != null)) {
+      backgroundMusic.pause();
       room.style.display = "none";
       lose.style.display = "inline-block";
       gameOver.play();
