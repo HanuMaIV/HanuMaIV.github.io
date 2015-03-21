@@ -1,0 +1,53 @@
+.characterPhoto {
+  width: 75px;
+  border-radius: 75px;
+  border: 1px #ffd6c0 solid;
+  display: inline;
+}
+
+#room {
+  margin: auto;
+  width: 640px;
+  height: 480px;
+  border: 2px #ffd6c0 solid;
+  background: grey;
+  position: relative;
+}
+
+#winner {
+  margin: auto;
+  width: 640px;
+  height: 480px;
+  border: 2px #ffd6c0 solid;
+  background: green;
+  position: relative;
+  display: none;
+}
+
+#winner h1 {
+  margin-top: 181px;
+}
+
+#winner p {
+  width: 50%;
+  margin: auto;
+}
+
+
+
+
+#playerDiv {
+  position: absolute;
+}
+
+#geovannaDiv {
+  position: absolute;
+}
+
+#aceDiv {
+  position: absolute;
+}
+
+#marcoDiv {
+  position: absolute;
+}
