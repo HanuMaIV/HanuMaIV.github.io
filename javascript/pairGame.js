@@ -42,7 +42,7 @@ var marco = {name: "Marco",
 var playerLeft = brendan.position.x;
 var playerTop = brendan.position.y;
 
-// Set Positions for Partner Divs based on Object values
+// Set Absolute Positions for Player and Partner Divs based on Object values
 playerDiv.style.left = playerLeft + "px";
 playerDiv.style.top = playerTop + "px";
 geovannaDiv.style.left = geo.position.x + "px";
