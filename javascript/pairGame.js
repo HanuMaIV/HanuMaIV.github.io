@@ -1,3 +1,11 @@
+// Prevents screen from scrolling when using arrow keys
+// by changing the default action
+window.addEventListener("keydown", function(e) {
+    if([37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+
 // load sounds & set  background music to loop using event listener.
 var backgroundMusic = new Audio('../sounds/backgroundMusic.mp3');
 backgroundMusic.addEventListener('ended', function() {
