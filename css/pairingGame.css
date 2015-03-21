@@ -4,7 +4,7 @@ ul {
 .characterPhoto {
   width: 75px;
   border-radius: 75px;
-  border: 1px #ffd6c0 solid;
+  border: 1px #000 solid;
   display: inline;
 }
 
