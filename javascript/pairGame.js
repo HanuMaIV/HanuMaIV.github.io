@@ -14,6 +14,7 @@ backgroundMusic.addEventListener('ended', function() {
 }, false);
 backgroundMusic.play();
 var move = new Audio('../sounds/move.mp3');
+var hintSound = new Audio('../sounds/hint.mp3');
 var winSound = new Audio('../sounds/winner.mp3');
 var cheer = new Audio('../sounds/cheer.mp3');
 var loser = new Audio('../sounds/loser.mp3');
@@ -65,6 +66,7 @@ var closestPlayerValue = null;
 
 // var
 var gameEnded = false;
+var hintShown = false;
 
 
 // Runs every time Player is moved and returns value of closest partner
@@ -129,6 +131,12 @@ function keyReader(e){
         closestPlayer();
       }
     }
+    if ((e.keyCode == 72) && (hintShown == false)) {
+      hintShown = true;
+      hint.innerHTML = pairMatch;
+      hint.style.display = "inline-block";
+      hintSound.play();
+    }
   }
   if(e.keyCode == 80) {
     if ((pairMatch == closestPlayerValue) && (closestPlayerValue =! null) && (gameEnded == false)){
@@ -148,11 +156,6 @@ function keyReader(e){
     } else {
       loser.play();
     }
-
-  }
-  if(e.keyCode == 72) {
-    hint.innerHTML = pairMatch;
-    hint.style.display = "inline-block";
 
   }
   if(e.keyCode == 78) {
