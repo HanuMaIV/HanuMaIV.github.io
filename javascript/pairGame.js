@@ -1,7 +1,7 @@
 // Prevents screen from scrolling when using arrow keys
 // by changing the default action
 window.addEventListener("keydown", function(e) {
-    if([37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
         e.preventDefault();
     }
 }, false);
@@ -66,6 +66,9 @@ var pairMatch = friends[randomPair()].name;
 // the value of the name of the closest player.
 var closestPlayerValue = null;
 
+// var
+var gameEnded = false;
+
 
 // Runs every time Player is moved and returns value of closest partner
 function closestPlayer() {
@@ -88,66 +91,63 @@ function randomPair() {
 
 // Maps key press events to desired behaviors
 function keyReader(e){
-  if(e.keyCode == 39) {
-    if (playerLeft + 140 > 500) {
-      error.play();
-    } else {
-      playerLeft += 140;
-      playerDiv.style.left = playerLeft + "px";
-      move.play();
-      closestPlayer();
-      console.log(playerLeft);
-      console.log(closestPlayerValue);
+  if (gameEnded == false) {
+    if(e.keyCode == 39) {
+      if (playerLeft + 140 > 500) {
+        error.play();
+      } else {
+        playerLeft += 140;
+        playerDiv.style.left = playerLeft + "px";
+        move.play();
+        closestPlayer();
+      }
     }
-  }
-  if(e.keyCode == 37) {
-    if (playerLeft - 0 < 100) {
-      error.play();
-    } else {
-      playerLeft -= 140;
-      playerDiv.style.left = playerLeft + "px";
-      move.play();
-      closestPlayer();
-      console.log(playerLeft);
-      console.log(closestPlayerValue);
+    if(e.keyCode == 37) {
+      if (playerLeft - 0 < 100) {
+        error.play();
+      } else {
+        playerLeft -= 140;
+        playerDiv.style.left = playerLeft + "px";
+        move.play();
+        closestPlayer();
+      }
     }
-  }
-  if(e.keyCode == 40) {
-    if (playerTop + 177 > 400) {
-      error.play();
-    } else {
-      playerTop += 177;
-      playerDiv.style.top = playerTop + "px";
-      move.play();
-      closestPlayer();
-      console.log(playerTop);
-      console.log(closestPlayerValue);
+    if(e.keyCode == 40) {
+      if (playerTop + 177 > 400) {
+        error.play();
+      } else {
+        playerTop += 177;
+        playerDiv.style.top = playerTop + "px";
+        move.play();
+        closestPlayer();
+      }
     }
-  }
-  if(e.keyCode == 38) {
-    if (playerTop - 177 < 0) {
-      error.play();
-    } else {
-      playerTop -= 177;
-      playerDiv.style.top = playerTop + "px";
-      move.play();
-      closestPlayer();
-      console.log(playerTop);
-      console.log(closestPlayerValue);
+    if(e.keyCode == 38) {
+      if (playerTop - 177 < 0) {
+        error.play();
+      } else {
+        playerTop -= 177;
+        playerDiv.style.top = playerTop + "px";
+        move.play();
+        closestPlayer();
+      }
     }
   }
   if(e.keyCode == 80) {
-    if ((pairMatch == closestPlayerValue) && (closestPlayerValue =! null)){
+    if ((pairMatch == closestPlayerValue) && (closestPlayerValue =! null) && (gameEnded == false)){
       backgroundMusic.pause();
+      gameEnded = true;
       winSound.play();
       room.style.display = "none";
       winner.style.display = "inline-block";
       cheer.play();
-    } else if ((pairMatch != closestPlayerValue) && (closestPlayerValue != null)) {
+    } else if ((pairMatch != closestPlayerValue) && (closestPlayerValue != null) && (gameEnded == false)) {
       backgroundMusic.pause();
+      gameEnded = true;
       room.style.display = "none";
       lose.style.display = "inline-block";
       gameOver.play();
+    } else if (gameEnded == true){
     } else {
       loser.play();
     }
