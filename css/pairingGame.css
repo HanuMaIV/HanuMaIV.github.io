@@ -59,7 +59,13 @@ ul {
 }
 
 
-
+#hint {
+  left: 240px;
+  top: 200px;
+  position: absolute;
+  display: none;
+  margin: auto;
+}
 
 #playerDiv {
   position: absolute;

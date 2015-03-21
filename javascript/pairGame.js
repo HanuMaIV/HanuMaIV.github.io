@@ -20,9 +20,6 @@ var loser = new Audio('../sounds/loser.mp3');
 var gameOver = new Audio('../sounds/gameOver.mp3');
 var error = new Audio('../sounds/invalidMove.mp3');
 
-//Access DOM element
-var playerImg = document.getElementById("player");
-
 // Create Player and Partner Objects
 var brendan = {name: "Brendan",
                position: {x: 10, y: 181}
@@ -153,6 +150,11 @@ function keyReader(e){
     }
 
   }
+  if(e.keyCode == 72) {
+    hint.innerHTML = pairMatch;
+    hint.style.display = "inline-block";
+
+  }
   if(e.keyCode == 78) {
     location.reload();
   }
@@ -161,3 +163,6 @@ function keyReader(e){
 
 // Keydown Event trigger
 document.onkeydown = keyReader;
+
+
+// Press H During Game For "Vidya" Mode
