@@ -242,8 +242,9 @@ musicOn.onmouseout = function() {
   musicOn.style.color = '#ffd6c0';
 }
 musicOn.onclick = function() {
+  if (gameEnded == false) {
     backgroundMusic.play();
+  }
 };
-
 
 //***Cheat Code*** Press H During Game For a Hint
