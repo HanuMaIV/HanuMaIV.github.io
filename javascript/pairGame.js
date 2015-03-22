@@ -1,12 +1,6 @@
-// Prevents screen from scrolling when using arrow keys
-// by changing the default action
-window.addEventListener("keydown", function(e) {
-    if([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
-        e.preventDefault();
-    }
-}, false);
-
-// load sounds & set  background music to loop using event listener.
+// Set Vars
+//
+// load sounds & set background music to loop using event listener.
 var backgroundMusic = new Audio('../sounds/backgroundMusic.mp3');
 backgroundMusic.addEventListener('ended', function() {
   this.currentTime = 0;
@@ -22,41 +16,31 @@ var gameOver = new Audio('../sounds/gameOver.mp3');
 var error = new Audio('../sounds/invalidMove.mp3');
 
 // Create Player and Partner Objects
+
+// Main Character Object
 var brendan = {name: "Brendan",
                position: {x: 10, y: 181}
               };
 
+// Pairing Partner Objects
 var geo = {name: "Geovanna",
-          position: {x: 530, y: 5},
+          position: {x: "530px", y: "5px"},
           hint: "My Name Rhymes with Benihana"};
 
 var ace = {name: "Ace",
-          position: {x: 530, y: 181},
+          position: {x: "530px", y: "181px"},
           hint: "Highest Card in the Deck"};
 
 var marco = {name: "Marco",
-            position: {x: 530, y: 358},
+            position: {x: "530px", y: "358px"},
             hint: "I lived in France for Two Years"};
 
 // Create Variables to Hold Brendan's Current X and Y position
 var playerLeft = brendan.position.x;
 var playerTop = brendan.position.y;
 
-// Set Absolute Positions for Player and Partner Divs based on Object values
-playerDiv.style.left = playerLeft + "px";
-playerDiv.style.top = playerTop + "px";
-geovannaDiv.style.left = geo.position.x + "px";
-geovannaDiv.style.top = geo.position.y + "px";
-aceDiv.style.left = ace.position.x + "px";
-aceDiv.style.top = ace.position.y + "px";
-marcoDiv.style.left = marco.position.x + "px";
-marcoDiv.style.top = marco.position.y + "px";
-
-// Create Array to hold Partners
-var friends = [geo, ace, marco];
-
 // Select random partner and store to pairMatch Variable
-var pairMatch = friends[randomPair()];
+var pairMatch = randomPair();
 
 // Create Variable to hold the name of the closest partner
 // Initially set to null will stay at null
@@ -69,8 +53,19 @@ var closestPlayerValue = null;
 var gameEnded = false;
 var hintShown = false;
 
+// Functions
+//
+//
+// generates a random number used to select random
+// partner that must be chosen to win
+function randomPair() {
+  friends = [geo, ace, marco];
+  randNum = Math.floor((Math.random() * 3) + 1) - 1;
+  return friends[randNum];
+};
 
-// Runs every time Player is moved and returns value of closest partner
+// Returns a Pairing Partner name if close to a valid object
+// if not close, null is returned
 function closestPlayer() {
   if ((playerLeft == 430) && (playerTop == 4)){
     closestPlayerValue = geo.name;
@@ -83,89 +78,143 @@ function closestPlayer() {
   }
 }
 
-// used to generate a random number used to select random
-// partner that must be chosen to win
-function randomPair() {
-  return Math.floor((Math.random() * 3) + 1) - 1;
-};
+// Moves Character Right if it is a valid move
+function moveRight() {
+  if (playerLeft + 140 > 500) {
+    error.play();
+  } else {
+    playerLeft += 140;
+    playerDiv.style.left = playerLeft + "px";
+    move.play();
+  }
+}
+
+// Moves Character Left if it is a valid move
+function moveLeft() {
+  if (playerLeft - 0 < 100) {
+    error.play();
+  } else {
+    playerLeft -= 140;
+    playerDiv.style.left = playerLeft + "px";
+    move.play();
+  }
+}
+
+// Moves Character Up if it is a valid move
+function moveUp() {
+  if (playerTop - 177 < 0) {
+    error.play();
+  } else {
+    playerTop -= 177;
+    playerDiv.style.top = playerTop + "px";
+    move.play();
+  }
+}
+
+// Moves Character Down if it is a valid move
+function moveDown() {
+  if (playerTop + 177 > 400) {
+    error.play();
+  } else {
+    playerTop += 177;
+    playerDiv.style.top = playerTop + "px";
+    move.play();
+  }
+}
+
+// Shows Hint into div ID Hint
+function showHint() {
+  hintShown = true;
+  hint.innerHTML = pairMatch.hint;
+  hint.style.display = "inline-block";
+  hintSound.play();
+}
+
+// Winning Game Sequence
+function winGame() {
+  backgroundMusic.pause();
+  gameEnded = true;
+  winSound.play();
+  room.style.display = "none";
+  winner.style.display = "inline-block";
+  cheer.play();
+}
+
+//Game Over Losing Sequence
+function loseGame() {
+  backgroundMusic.pause();
+  gameEnded = true;
+  room.style.display = "none";
+  lose.style.display = "inline-block";
+  gameOver.play();
+}
+
+// Checks for a Valid Winner and calls winning or losing sequences
+// if not near a pairing partner, an invalid sound it played.
+function checkWinner() {
+  if ((pairMatch.name == closestPlayerValue) && (closestPlayerValue =! null) && (gameEnded == false)) {
+    winGame();
+  } else if ((pairMatch != closestPlayerValue) && (closestPlayerValue != null) && (gameEnded == false)) {
+    loseGame();
+  } else {
+    loser.play();
+  }
+}
+
 
 // Maps key press events to desired behaviors
 function keyReader(e){
-  if (gameEnded == false) {
+  if (gameEnded == false) { // This prevents undesired key input if game has ended
     if(e.keyCode == 39) {
-      if (playerLeft + 140 > 500) {
-        error.play();
-      } else {
-        playerLeft += 140;
-        playerDiv.style.left = playerLeft + "px";
-        move.play();
-        closestPlayer();
-      }
+      moveRight();
     }
     if(e.keyCode == 37) {
-      if (playerLeft - 0 < 100) {
-        error.play();
-      } else {
-        playerLeft -= 140;
-        playerDiv.style.left = playerLeft + "px";
-        move.play();
-        closestPlayer();
-      }
+      moveLeft();
     }
     if(e.keyCode == 40) {
-      if (playerTop + 177 > 400) {
-        error.play();
-      } else {
-        playerTop += 177;
-        playerDiv.style.top = playerTop + "px";
-        move.play();
-        closestPlayer();
-      }
+      moveDown();
     }
     if(e.keyCode == 38) {
-      if (playerTop - 177 < 0) {
-        error.play();
-      } else {
-        playerTop -= 177;
-        playerDiv.style.top = playerTop + "px";
-        move.play();
-        closestPlayer();
-      }
+      moveUp();
     }
     if ((e.keyCode == 72) && (hintShown == false)) {
-      hintShown = true;
-      hint.innerHTML = pairMatch.hint;
-      hint.style.display = "inline-block";
-      hintSound.play();
+      showHint();
+    }
+    if (e.keyCode == 80) {
+      closestPlayer();
+      checkWinner();
     }
   }
-  if(e.keyCode == 80) {
-    if ((pairMatch.name == closestPlayerValue) && (closestPlayerValue =! null) && (gameEnded == false)){
-      backgroundMusic.pause();
-      gameEnded = true;
-      winSound.play();
-      room.style.display = "none";
-      winner.style.display = "inline-block";
-      cheer.play();
-    } else if ((pairMatch != closestPlayerValue) && (closestPlayerValue != null) && (gameEnded == false)) {
-      backgroundMusic.pause();
-      gameEnded = true;
-      room.style.display = "none";
-      lose.style.display = "inline-block";
-      gameOver.play();
-    } else if (gameEnded == true){
-    } else {
-      loser.play();
-    }
-  }
+  // outside of if statement These key inputs will run regardless if
+  // game has ended or not.
   if((e.keyCode == 78) && (gameEnded == true)){
     location.reload();
   }
-
 }
 
-// Keydown Event trigger
+// Config Environment
+//
+//
+// Set Absolute Positions for Player and Partner Divs based on Object values
+// Set's Position for Main Character
+playerDiv.style.left = playerLeft + "px";
+playerDiv.style.top = playerTop + "px";
+
+// Sets Positions for Pairing Partners
+geovannaDiv.style.left = geo.position.x;
+geovannaDiv.style.top = geo.position.y;
+aceDiv.style.left = ace.position.x;
+aceDiv.style.top = ace.position.y;
+marcoDiv.style.left = marco.position.x;
+marcoDiv.style.top = marco.position.y;
+
+// Calls keyReader function on keyboard keydown event
 document.onkeydown = keyReader;
 
+// Prevents screen from scrolling when using arrow keys
+// by changing the default action
+window.addEventListener("keydown", function(e) {
+  if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+      e.preventDefault();}}, false);
 
-// Press H During Game For a Hint
+//***Cheat Code*** Press H During Game For a Hint
