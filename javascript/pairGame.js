@@ -53,6 +53,10 @@ var closestPlayerValue = null;
 var gameEnded = false;
 var hintShown = false;
 
+// Access the DOM for Music On and Off Controls
+var musicOff = document.getElementById("musicOff");
+var musicOn = document.getElementById("musicOn");
+
 // Functions
 //
 //
@@ -216,5 +220,30 @@ document.onkeydown = keyReader;
 window.addEventListener("keydown", function(e) {
   if ([32, 37, 38, 39, 40].indexOf(e.keyCode) > -1) {
       e.preventDefault();}}, false);
+
+
+// Event handlers for sound off and on
+musicOff.style.cursor = 'pointer';
+musicOff.onmouseover = function() {
+  musicOff.style.color = '#443311';
+}
+musicOff.onmouseout = function() {
+  musicOff.style.color = '#ffd6c0';
+}
+musicOff.onclick = function() {
+    backgroundMusic.pause();
+};
+
+musicOn.style.cursor = 'pointer';
+musicOn.onmouseover = function() {
+  musicOn.style.color = '#443311';
+}
+musicOn.onmouseout = function() {
+  musicOn.style.color = '#ffd6c0';
+}
+musicOn.onclick = function() {
+    backgroundMusic.play();
+};
+
 
 //***Cheat Code*** Press H During Game For a Hint

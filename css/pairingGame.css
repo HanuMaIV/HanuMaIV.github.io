@@ -83,3 +83,8 @@ ul {
 #marcoDiv {
   position: absolute;
 }
+
+.musicControls {
+  display: inline-block;
+  margin: 30px 50px 10px 50px;
+}
