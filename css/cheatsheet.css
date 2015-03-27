@@ -1,0 +1,59 @@
+body {
+    width: 65%;
+    margin: auto;
+}
+
+header {
+  margin: 0 auto;
+  text-align: center;
+  background-color: #3498db;
+  padding: 10px;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  float: left;
+  position: relative;
+  margin-left: 75px;
+}
+
+aside {
+  float: left;
+  position: relative;
+}
+
+aside h3 {
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+code {
+  background-color: #ccc;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 10px;
+}
+
+li a {
+  text-decoration: none;
+  color: #777;
+}
+
+li a:hover {
+  color: #3498db;
+}
+
+footer {
+  clear: both;
+  height: 200px;
+  text-align: center;
+  padding-top: 100px;
+}

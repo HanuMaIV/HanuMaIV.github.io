@@ -1,122 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Git Cheat Sheet</title>
-</head>
-<body>
-  <header>
-    <h1>Git Cheat Sheet</h1>
-  </header>
+  <head>
+    <meta charset="utf-8">
+    <title>Git Cheat Sheet</title>
+    <link rel="stylesheet" href="../css/cheatsheet.css" media="screen">
+  </head>
+  <body>
+    <header id="top">
+      <h1>Git Cheat Sheet</h1>
+    </header>
 
-  <main> <!--main content -->
+    <div id="container"> <!--main content -->
 
-    <aside>  <!--sidebar-->
-       <ul>
-         <li>CONFIGURE TOOLING</li>
-         <li>CREATE REPOSITORIES</li>
-         <li>MAKE CHANGES</li>
-         <li>REVIEW HISTORY</li>
-         <li>REDO COMMITS</li>
-         <li>SYNCHRONIZE CHANGES</li>
-      </ul>
-
-
-    </aside>
-
+      <aside>  <!--sidebar-->
+        <h3>Commands</h3>
+         <ul>
+           <li><a href="#configure_tooling">CONFIGURE TOOLING</a></li>
+           <li><a href="#create_repo">CREATE REPOSITORIES</a></li>
+           <li><a href="#make_changes">MAKE CHANGES</a></li>
+           <li><a href="#group_change">GROUP CHANGES</a></li>
+           <li><a href="#review_history">REVIEW HISTORY</a></li>
+           <li><a href="#redo_changes">REDO COMMITS</a></li>
+           <li><a href="#sync_changes">SYNCHRONIZE CHANGES</a></li>
+        </ul>
 
 
-    <section>
-      <h3>CONFIGURE TOOLING</h3>
-      <h4>Configure user information for all local repositories</h4>
-      <code>$ git config --global user.name "[name]"</code>
-      <p>Sets the name you want atached to your commit transactions</p>
-      <code>$ git config --global user.email "[email address]"</code>
-      <p>Sets the email you want atached to your commit transactions</p>
-      <code>$ git config --global color.ui auto</code>
-      <p>Enables helpful colorization of command line output</p>
-    </section>
+      </aside>
 
-    <section>
-      <h3>CREATE REPOSITORIES</h3>
-      <h4>Start a new repository or obtain one from an existing URL</h4>
-      <code>$ git init [project-name]</code>
-      <p>Creates a new local repository with the specified name</p>
-      <code>$ git clone [url]</code>
-      <p>Downloads a project and its entire version history</p>
-    </section>
 
-    <section>
-      <h3>MAKE CHANGES<h3>
-      <h4>Review edits and craft a commit transaction</h4>
-      <code>$ git status</code>
-      <p>Lists all new or modified files to be commited<p>
-      <code>$ git add [file]</code>
-      <p>Snapshots the file in preparation for versioning</p>
-      <code>$ git reset [file]</code>
-      <p>Unstages the file, but preserve its contents</p>
-      <code>$ git diff</code>
-      <p>Shows file differences not yet staged</p>
-      <code>$ git diff --staged</code>
-      <p>Shows file differences between staging and the last file version</p>
-      <code>$ git commit -m "[descriptive message]"</code>
-      <p>Records file snapshots permanently in version history</p>
-    </section>
+      <main>
+      <section>
+        <h3><a id="configure_tooling">CONFIGURE TOOLING</a></h3>
+        <h4>Configure user information for all local repositories</h4>
+        <code>$ git config --global user.name "[name]"</code>
+        <p>Sets the name you want attached to your commit transactions</p>
+        <code>$ git config --global user.email "[email address]"</code>
+        <p>Sets the email you want attached to your commit transactions</p>
+        <code>$ git config --global color.ui auto</code>
+        <p>Enables helpful colorization of command line output</p>
+      </section>
 
-    <section>
-      <h3>GROUP CHANGES<h3>
-      <h4>Name a series of commits and combine completed efforts</h4>
-      <code>$ git branch</code>
-      <p>Lists all local branches in the current repository</p>
-      <code>$ git branch [branch-name]</code>
-      <p>Creates a new branch</p>
-      <code>$ git checkout [branch-name]</code>
-      <p>Switches to the specified branch and updates the working directory</p>
-      <code>$ git merge [branch]</code>
-      <p>Combines the specified branch’s history into the current branch</p>
-      <code>$ git branch -d [branch-name]</code>
-      <p>Deletes the specified branch</p>
-    </section>
+      <section>
+        <h3><a id="create_repo">CREATE REPOSITORIES</a></h3>
+        <h4>Start a new repository or obtain one from an existing URL</h4>
+        <code>$ git init [project-name]</code>
+        <p>Creates a new local repository with the specified name</p>
+        <code>$ git clone [url]</code>
+        <p>Downloads a project and its entire version history</p>
+      </section>
 
-    <section>
-      <h3>REVIEW HISTORY<h3>
-      <h4>Browse and inspect the evolution of project files<h4>
-      <code>$ git log</code>
-      <p>Lists version history for the current branch</p>
-      <code>$ git log --follow [file]</code>
-      <p>Lists version history for a file, including renames</p>
-      <code>$ git diff [first-branch]...[second-branch]</code>
-      <p>Shows content differences between two branches</p>
-      <code>$ git show [commit]</code>
-      <p>Outputs metadata and content changes of the specified commit</p>
-    </section>
+      <section>
+        <h3><a id="make_changes">MAKE CHANGES</a></h3>
+        <h4>Review edits and craft a commit transaction</h4>
+        <code>$ git status</code>
+        <p>Lists all new or modified files to be committed<p>
+        <code>$ git add [file]</code>
+        <p>Snapshots the file in preparation for versioning</p>
+        <code>$ git reset [file]</code>
+        <p>Unstages the file, but preserve its contents</p>
+        <code>$ git diff</code>
+        <p>Shows file differences not yet staged</p>
+        <code>$ git diff --staged</code>
+        <p>Shows file differences between staging and the last file version</p>
+        <code>$ git commit -m "[descriptive message]"</code>
+        <p>Records file snapshots permanently in version history</p>
+      </section>
 
-    <section>
-      <h3>REDO COMMITS</h3>
-      <h4>Erase mistakes and craf replacement history<h4>
-      <code>$ git reset [commit]</code>
-      <p>Undoes all commits afer [commit], preserving changes locally</p>
-      <code>$ git reset --hard [commit]</code>
-    <p>Discards all history and changes back to the specified commit</p>
-    </section>
+      <section>
+        <h3><a id="group_change">GROUP CHANGES</a></h3>
+        <h4>Name a series of commits and combine completed efforts</h4>
+        <code>$ git branch</code>
+        <p>Lists all local branches in the current repository</p>
+        <code>$ git branch [branch-name]</code>
+        <p>Creates a new branch</p>
+        <code>$ git checkout [branch-name]</code>
+        <p>Switches to the specified branch and updates the working directory</p>
+        <code>$ git merge [branch]</code>
+        <p>Combines the specified branch’s history into the current branch</p>
+        <code>$ git branch -d [branch-name]</code>
+        <p>Deletes the specified branch</p>
+      </section>
 
-    <section>
-      <h3>SYNCHRONIZE CHANGES<h3>
-      <h4>Register a repository bookmark and exchange version history<h4>
-      <code>$ git fetch [bookmark]</code>
-      <p>Downloads all history from the repository bookmark</p>
-      <code>$ git merge [bookmark]/[branch]</code>
-      <p>Combines bookmark’s branch into current local branch</p>
-      <code>$ git push [alias] [branch]</code>
-      <p>Uploads all local branch commits to GitHub</p>
-      <code>$ git pull</code>
-      <p>Downloads bookmark history and incorporates changes</p>
-    </section>
+      <section>
+        <h3><a id="review_history">REVIEW HISTORY</a></h3>
+        <h4>Browse and inspect the evolution of project files</h4>
+        <code>$ git log</code>
+        <p>Lists version history for the current branch</p>
+        <code>$ git log --follow [file]</code>
+        <p>Lists version history for a file, including renames</p>
+        <code>$ git diff [first-branch]...[second-branch]</code>
+        <p>Shows content differences between two branches</p>
+        <code>$ git show [commit]</code>
+        <p>Outputs meta data and content changes of the specified commit</p>
+      </section>
 
-  </main>
-</body>
-<footer>
-</footer>
+      <section>
+        <h3><a id="redo_changes">REDO COMMITS</a></h3>
+        <h4>Erase mistakes and craft replacement history</h4>
+        <code>$ git reset [commit]</code>
+        <p>Undo all commits after [commit], preserving changes locally</p>
+        <code>$ git reset --hard [commit]</code>
+      <p>Discards all history and changes back to the specified commit</p>
+      </section>
+
+      <section>
+        <h3><a id="sync_changes">SYNCHRONIZE CHANGES</a></h3>
+        <h4>Register a repository bookmark and exchange version history</h4>
+        <code>$ git fetch [bookmark]</code>
+        <p>Downloads all history from the repository bookmark</p>
+        <code>$ git merge [bookmark]/[branch]</code>
+        <p>Combines bookmarks branch into current local branch</p>
+        <code>$ git push [alias] [branch]</code>
+        <p>Uploads all local branch commits to GitHub</p>
+        <code>$ git pull</code>
+        <p>Downloads bookmark history and incorporates changes</p>
+      </section>
+      </main>
+
+    </div>
+    <footer>
+      <p><a href="#top">Back To Top</a></p>
+    </footer>
+  </body>
 </html>
-
 
