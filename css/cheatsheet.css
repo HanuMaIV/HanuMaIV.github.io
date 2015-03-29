@@ -4,6 +4,7 @@ body {
 }
 
 header {
+  width: 100%;
   margin: 0 auto;
   text-align: center;
   background-color: #3498db;
@@ -17,12 +18,12 @@ h1 {
 main {
   float: left;
   position: relative;
-  margin-left: 75px;
+  margin-left: 350px;
 }
 
 aside {
   float: left;
-  position: relative;
+  position: absolute;
 }
 
 aside h3 {
