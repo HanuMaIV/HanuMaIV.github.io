@@ -84,14 +84,14 @@
           <p>Originally I had also included funny faces on every page of my site on my profile picture. I toned that down also. The playful picture now only appears on my contact page.</p>
           <p>I also took time this week to upgrade my site to use cname, A records and MX (mail exchanger)records:</p>
           <ul>
-            <li>brendanmiranda.com A Record 192.30.252.154<li>
-            <li>brendanmiranda.com A Record 192.30.252.153 (backup)<li>
+            <li>brendanmiranda.com A Record 192.30.252.154</li>
+            <li>brendanmiranda.com A Record 192.30.252.153 (backup)</li>
             <li>www.brendanmiranda.com --> CNAME brendanmiranda.com (this is to get rid of the www, which is a personal preference of mine).</li>
             <li>mail.brendanmiranda.com A record 198.20.70.218 (friendly name for accessing my mail server through mail clients)</li>
             <li>MX Record for brendanmiranda.com --> 198.20.70.218 (this is so my email still works)</li>
             <li>Created a file on the root of my github repo named "CNAME", brendanmiranda.com is listed on line 1. This tells github to respond to queries to brendanmiranda.com</li>
           </ul>
-          <p>The dns was pretty simple the only thing was that I forgot that my previous MX record pointed to brendanmiranda.com. That was causing errors because that was pointing to 192.30.252.154 (my github repo) because that is what brendanmiranda.com is resolving to now. I had to update the MX to point to 198.20.70.218 in order to get my mail working again.</p>
+          <p>The dns was pretty simple the only thing was that I forgot that my previous MX record pointed to brendanmiranda.com. That was causing errors because it was pointing to 192.30.252.154 (my github repo) because that is what brendanmiranda.com is resolving to now. I had to update the MX record to point to 198.20.70.218 in order to get my mail working again. Everything is good now.</p>
         </div>
            <p class="signature">- <span class="cursive">Brendan R. Miranda</span></p>
            <p class="textCenter"><a href="../blog.html#blogTable">- Read more blog entries -</a></p>
