@@ -25,7 +25,7 @@
       <meta name="msapplication-TileColor" content="#ffffff">
       <meta name="msapplication-TileImage" content="../images/favicons/ms-icon-144x144.png">
       <meta name="theme-color" content="#ffffff">
-      <title><!--Title-->| Brendan Miranda Software Writer</title>
+      <title>Professional Blog | Brendan Miranda Software Writer</title>
     </head>
     <body id="blogPost">
       <header>
@@ -76,10 +76,22 @@
       </header>
 
       <section>
-        <h1><!-- Blog Title --></h1>
+        <h1>Professional Blog</h1>
         <img id="homePhoto" src="../images/brendan.jpeg" alt="Brendan Miranda Photo">
         <div class="blogEntry">
-          <!-- Blog Entry Here-->
+          <p>This week I was tasked with using feedback to make my blog more professional. After initially sending out emails and tweets, I was able to recognize that the colors needed to be toned down.</p>
+          <p>I originally had a different color for each page. I can see how that was a little too much. I settled on a body color of "#95a5a6" which I feel is a good balance of playfulness and easy on the eyes (before I had some pretty alarming colors). One of my friends (Karli) was able to help me out with reducing contrast to find that color. It was nice to have that help.</p>
+          <p>Originally I had also included funny faces on every page of my site on my profile picture. I toned that down also. The playful picture now only appears on my contact page.</p>
+          <p>I also took time this week to upgrade my site to use cname, A records and MX (mail exchanger)records:</p>
+          <ul>
+            <li>brendanmiranda.com A Record 192.30.252.154<li>
+            <li>brendanmiranda.com A Record 192.30.252.153 (backup)<li>
+            <li>www.brendanmiranda.com --> CNAME brendanmiranda.com (this is to get rid of the www, which is a personal preference of mine).</li>
+            <li>mail.brendanmiranda.com A record 198.20.70.218 (friendly name for accessing my mail server through mail clients)</li>
+            <li>MX Record for brendanmiranda.com --> 198.20.70.218 (this is so my email still works)</li>
+            <li>Created a file on the root of my github repo named "CNAME", brendanmiranda.com is listed on line 1. This tells github to respond to queries to brendanmiranda.com</li>
+          </ul>
+          <p>The dns was pretty simple the only thing was that I forgot that my previous MX record pointed to brendanmiranda.com. That was causing errors because that was pointing to 192.30.252.154 (my github repo) because that is what brendanmiranda.com is resolving to now. I had to update the MX to point to 198.20.70.218 in order to get my mail working again.</p>
         </div>
            <p class="signature">- <span class="cursive">Brendan R. Miranda</span></p>
            <p class="textCenter"><a href="../blog.html#blogTable">- Read more blog entries -</a></p>
